@@ -14,7 +14,6 @@ https://github.com/user-attachments/assets/adef3031-247f-484d-8a4e-2e1f855ed3ff
 ## Faire clignoter une LED
 
 1. Plusieurs horloges sont disponibles sur la carte. Sur quelle broche est connectée l’horloge nommée FPGA_CLK1_50 ?
-
    L’horloge nommée FPGA_CLK1_50 est dans la broche PIN_V11.
 
 2. Le code VHDL ci-dessous permet de faire simplement clignoter une LED
@@ -98,4 +97,8 @@ Vous noterez également l’utilisation d’un signal de reset : i_rst_n.
 10. Vous utiliserez le bouton poussoir nommé KEY0 (AH17 sur le FPGA).
 11. Que sigifie _n dans i_rst_n ? Pourquoi ? :
 
-    `_n` veut dire que l'entrée `i_rst` est « active-low ». C'est à dire, que l'entrée `i_rst` a un comportement inverse : si une signal « low » est connectée à la broche `i_rst`, l'état logique de la signal sera « high », et si une signal « high » est connectée à la broche `i_rst`, l'état logique de la signal sera « low ».
+    `_n` veut dire que l'entrée `i_rst` est « active-low ». C'est-à-dire que l'entrée `i_rst` a un comportement inverse : si un signal « low » est connecté à la broche `i_rst`, l'état logique du signal sera « high », et si un signal « high » est connecté à la broche `i_rst`, l'état logique du signal sera « low ». Ce comportement est grâce à une porte logique inverseur (NOT) qui est connectée à la broche. Cette porte est représentée par un petit cercle lié à la broche dans le schéma.
+
+## Chenillard
+
+## Écran Magique
