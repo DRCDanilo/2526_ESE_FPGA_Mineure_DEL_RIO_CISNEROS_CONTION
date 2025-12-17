@@ -52,6 +52,8 @@ end architecture rtl;
 
 4. Comparez avec le schéma proposé par quartus:
 
+<img width="1590" height="862" alt="image" src="https://github.com/user-attachments/assets/744a9088-32d0-4963-a191-29f6cbb2719a" />
+
 
 5. Ce n’est pas la peine de tester ce code sur la carte, la LED clignote à 50MHz : c’est trop rapide.
 6. En vous aidant du code ci-dessous, modifiez votre code pour réduire la fréquence :
