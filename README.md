@@ -102,3 +102,6 @@ Vous noterez également l’utilisation d’un signal de reset : i_rst_n.
 ## Chenillard
 
 ## Écran Magique
+
+### Gestion des encodeurs
+
