@@ -13,4 +13,67 @@ https://github.com/user-attachments/assets/adef3031-247f-484d-8a4e-2e1f855ed3ff
 
 ## Faire clignoter une LED
 
+1. Plusieurs horloges sont disponibles sur la carte. Sur quelle broche est connectée l’horloge nommée FPGA_CLK1_50 ?
+
 L’horloge nommée FPGA_CLK1_50 est dans la broche PIN_V11.
+
+2. Le code VHDL ci-dessous permet de faire simplement clignoter une LED
+
+```
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity led_blink is
+    port (
+        i_clk : in std_logic;
+        i_rst_n : in std_logic;
+        o_led : out std_logic
+    );
+end entity led_blink;
+
+architecture rtl of led_blink is
+    signal r_led : std_logic := '0';
+begin
+    process(i_clk, i_rst_n)
+    begin
+        if (i_rst_n = '0') then
+            r_led <= '0';
+        elsif (rising_edge(i_clk)) then
+            r_led <= not r_led;
+        end if;
+    end process;
+    o_led <= r_led;
+end architecture rtl;
+```
+
+3. Tracez le schéma correspondant à ce code VHDL:
+
+<img width="348" height="315" alt="image" src="https://github.com/user-attachments/assets/d3ef7cf0-1f79-4a68-8a71-4ecc88d5844c" />
+
+4. Comparez avec le schéma proposé par quartus:
+
+
+5. Ce n’est pas la peine de tester ce code sur la carte, la LED clignote à 50MHz : c’est trop rapide.
+6. En vous aidant du code ci-dessous, modifiez votre code pour réduire la fréquence :
+```
+process(i_clk, i_rst_n)
+    variable counter : natural range 0 to 5000000 := 0;
+begin
+    if (i_rst_n = '0') then
+        counter := 0;
+        r_led_enable <= '0';
+    elsif (rising_edge(i_clk)) then
+        if (counter = 5000000) then
+            counter := 0;
+            r_led_enable <= '1';
+        else
+            counter := counter + 1;
+            r_led_enable <= '0';
+        end if;
+    end if;
+end process;
+```
+7. Proposez un schéma correspondant au nouveau code:
+   
+9. Vérifiez à l’aide de RTL Viewer
+
