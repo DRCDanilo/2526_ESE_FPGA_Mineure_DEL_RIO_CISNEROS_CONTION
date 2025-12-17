@@ -15,7 +15,7 @@ https://github.com/user-attachments/assets/adef3031-247f-484d-8a4e-2e1f855ed3ff
 
 1. Plusieurs horloges sont disponibles sur la carte. Sur quelle broche est connectée l’horloge nommée FPGA_CLK1_50 ?
 
-L’horloge nommée FPGA_CLK1_50 est dans la broche PIN_V11.
+   L’horloge nommée FPGA_CLK1_50 est dans la broche PIN_V11.
 
 2. Le code VHDL ci-dessous permet de faire simplement clignoter une LED
 
@@ -48,12 +48,11 @@ end architecture rtl;
 
 3. Tracez le schéma correspondant à ce code VHDL:
 
-<img width="348" height="315" alt="image" src="https://github.com/user-attachments/assets/d3ef7cf0-1f79-4a68-8a71-4ecc88d5844c" />
+<img width="449" height="346" alt="image" src="https://github.com/user-attachments/assets/0dc266db-58c0-4ebf-9835-62fd1311238c" />
 
 4. Comparez avec le schéma proposé par quartus:
 
 <img width="1590" height="862" alt="image" src="https://github.com/user-attachments/assets/744a9088-32d0-4963-a191-29f6cbb2719a" />
-
 
 5. Ce n’est pas la peine de tester ce code sur la carte, la LED clignote à 50MHz : c’est trop rapide.
 6. En vous aidant du code ci-dessous, modifiez votre code pour réduire la fréquence :
@@ -76,6 +75,27 @@ begin
 end process;
 ```
 7. Proposez un schéma correspondant au nouveau code:
-   
-9. Vérifiez à l’aide de RTL Viewer
 
+<img width="449" height="346" alt="image" src="https://github.com/user-attachments/assets/0dc266db-58c0-4ebf-9835-62fd1311238c" />
+   
+8. Vérifiez à l’aide de RTL Viewer
+
+
+
+
+ Comme vous l’avez peut-être remarqué :
+
+        Les entrées commencent par i_
+        Les sorties commencent par o_
+        Les registres commencent par r_
+        Les signaux internes commencent par s_
+
+    C’est une bonne habitude à prendre.
+
+Vous noterez également l’utilisation d’un signal de reset : i_rst_n.
+
+9. C’est important d’avoir un signal de reset, utilisez-le pour chacun de vos registres
+10. Vous utiliserez le bouton poussoir nommé KEY0 (AH17 sur le FPGA).
+11. Que sigifie _n dans i_rst_n ? Pourquoi ? :
+
+    `_n` veut dire que l'entrée `i_rst` est « active-low ». C'est à dire, que l'entrée `i_rst` a un comportement inverse : si une signal « low » est connectée à la broche `i_rst`, l'état logique de la signal sera « high », et si une signal « high » est connectée à la broche `i_rst`, l'état logique de la signal sera « low ».
