@@ -101,7 +101,30 @@ Vous noterez également l’utilisation d’un signal de reset : i_rst_n.
 
 ## Chenillard
 
-## Écran Magique
+## Petit projet : Écran Magique
+
+Ce petit projet en 3 séances vous propose de concevoir une version numérique du télécran, en utilisant la sortie HDMI de la carte DE10-Nano. Le stylet numérique sera toujours déplacé par deux boutons, les deux encodeurs de la carte mezzanine.
 
 ### Gestion des encodeurs
 
+L'objectif est d'incrémenter la valeur d'un registre lorsque l'on tourne l'encodeur vers la droite, et de le décrémenter lorsqu'on le tourne vers la gauche. La taille du registre doit être configurable. On pourra choisir une taille de 10 dans cette partie pour afficher la valeur en binaire sur les LED.
+
+Un encodeur renvoie deux signaux A et B en quadrature.
+
+- Il y a deux conditions possible pour incrémenter le registre :
+   - Front montant sur A et B à l'état bas.
+   - Front descendant sur A et B à l'état haut.
+- Il y a deux conditions possible pour décrémenter le registre :
+   - Front montant sur B et A à l'état bas.
+   - Front descendant sur B et A à l'état haut
+
+Vous aurez besoin d'une structure de ce type pour détecter les fronts montants :
+
+<img width="582" height="193" alt="image" src="https://github.com/user-attachments/assets/ff7dd072-dda6-468f-9bf8-48706040eb56" />
+
+
+1. On a commencé à travailler dans le projet fourni dans ce [lien](https://github.com/lfiack/ENSEA_2A_FPGA_Public/blob/main/mineure/3-tp/telecran.zip).
+2. À l'aide du schéma ci-dessus, expliquez comment un front montant ou descendant peut être détecté.
+   Si 
+
+   
