@@ -125,6 +125,6 @@ Vous aurez besoin d'une structure de ce type pour détecter les fronts montants 
 
 1. On a commencé à travailler dans le projet fourni dans ce [lien](https://github.com/lfiack/ENSEA_2A_FPGA_Public/blob/main/mineure/3-tp/telecran.zip).
 2. À l'aide du schéma ci-dessus, expliquez comment un front montant ou descendant peut être détecté.
-   Si 
 
+   Un front montant peut être détecté en utilisant une porte NOT et une porte AND dans le dernier composant de l'image d'avant. Cela permet de détecter l'état précédent et l'état actuel. 
    
