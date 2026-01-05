@@ -142,6 +142,14 @@ Cette étape du projet consiste à afficher un seul et unique pixel qui se dépl
 
 Cette partie est un peu plus complexe. On veut mémoiriser les pixels parcourus pour afficher le dessin, comme sur un véritable écran magique. Il faudra utiliser un framebuffer pour stocker les pixels déjà allumés. Le code d'une mémoire est fourni dans le fichier dpram.vhd. Il s'agit d'une mémoire RAM dual-port.
 
+1. Mémoire dual-port : est un type de mémoire vive qui permet l'accès simultané par deux ensembles indépendants d'adresses, de données et de lignes de contrôle. Cela signifie que les données stockées dans la mémoire RAM à double accès peuvent être consultées deux fois au cours du même cycle.
+
+   La mémoire vidéo (VRAM) est une forme courante de mémoire RAM dynamique à double port principalement utilisée pour la mémoire vidéo, permettant à l'unité centrale de traitement (CPU) de dessiner l'image en même temps que le matériel vidéo la lit à l'écran.
+
+2. Proposer un schéma pour mémoiriser les pixels.
+
+   
+
 ### Effacement
 
 Ici on veut pouvoir effacer l'écran lors de l'appui sur un bouton (par exemple sur l'encodeur gauche). C'est plus compliqué qu'il n'y parait : Il faut parcourir toutes les adresses de la RAM pour y écrire un zéro.
