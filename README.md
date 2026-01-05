@@ -128,3 +128,20 @@ Vous aurez besoin d'une structure de ce type pour détecter les fronts montants 
 
    Un front montant peut être détecté en utilisant une porte NOT et une porte AND dans le dernier composant de l'image d'avant. Cela permet de détecter l'état précédent et l'état actuel. 
    
+
+### Contrôleur HDMI
+
+Cette partie du projet consiste à mettre en oeuvre le contrôleur HDMI.
+
+
+### Déplacement d'un pixel
+
+Cette étape du projet consiste à afficher un seul et unique pixel qui se déplace en fonction des deux encodeurs. L'encodeur gauche déplace le pixel à l'horizontal, l'encodeur gauche déplace le pixel à la verticale.
+
+### Mémorisation
+
+Cette partie est un peu plus complexe. On veut mémoiriser les pixels parcourus pour afficher le dessin, comme sur un véritable écran magique. Il faudra utiliser un framebuffer pour stocker les pixels déjà allumés. Le code d'une mémoire est fourni dans le fichier dpram.vhd. Il s'agit d'une mémoire RAM dual-port.
+
+### Effacement
+
+Ici on veut pouvoir effacer l'écran lors de l'appui sur un bouton (par exemple sur l'encodeur gauche). C'est plus compliqué qu'il n'y parait : Il faut parcourir toutes les adresses de la RAM pour y écrire un zéro.
